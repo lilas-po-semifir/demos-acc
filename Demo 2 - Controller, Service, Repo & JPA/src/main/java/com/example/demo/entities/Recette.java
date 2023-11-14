@@ -24,6 +24,9 @@ public class Recette {
   @OneToMany
   public List<IngredientQuantite> ingredientQuantite;
 
+  @ManyToMany(mappedBy = "recettes")
+  public List<Categorie> categories;
+
   public int getId() {
     return id;
   }
@@ -54,5 +57,13 @@ public class Recette {
 
   public void setIngredientQuantite(List<IngredientQuantite> ingredientQuantite) {
     this.ingredientQuantite = ingredientQuantite;
+  }
+
+  public List<Categorie> getCategories() {
+    return categories;
+  }
+
+  public void setCategories(List<Categorie> categories) {
+    this.categories = categories;
   }
 }
